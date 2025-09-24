@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* ===== Layout principal ===== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 110px; /* espacio para el header fijo */
+}
+
+.contenido {
+    flex: 1;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header superior ===== */
+.header-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+}
+
+.header-menu nav a {
+    color: #4b00ff; /* violeta como en la página de inicio */
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+.header-menu nav a:hover {
+    color: #6c00e8;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    width: 220px;
+    background-color: #343a40;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.sidebar-header h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.user-info i {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.menu a i {
+    margin-right: 8px;
+}
+
+.menu a:hover {
+    background-color: #495057;
+}
+
+.cerrar-sesion {
+    background-color: #dc3545;
+    margin-top: auto;
+}
+
+/* ===== Contenido ===== */
+.header h1 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #343a40;
+}
+
+.principal h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/********************/
+/* Tarjetas */
+.tarjetas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta .numero {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.tarjeta .texto {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.tarjeta-azul {
+    background-color: #007bff;
+}
+
+.tarjeta-verde {
+    background-color: #28a745;
+}
+
+/******************************/
+/* Carpetas */
+.carpeta {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #ccc;
+    width: 180px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.carpeta:hover {
+    background-color: #e2e6ea;
+}
+
+.carpeta i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.carpeta .texto {
+    font-size: 14px;
+    color: #343a40;
+}
+
+/******************************/
+/* Botón info */
+.btn-info {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: rgb(27, 27, 27);
+    padding: 8px 12px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    align-self: flex-start;
+}
+
+.btn-info:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== Footer ===== */
+.footer {
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .sidebar .menu {
+        display: flex;
+        gap: 10px;
+    }
+
+    .contenido {
+        padding: 15px;
+    }
+
+    .tarjetas {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-menu .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-menu nav {
+        display: none; /* ocultamos menú en móviles */
+    }
+
+    .hambur {
+        display: block;
+        font-size: 22px;
+        color: #4b00ff;
+        margin-right: 15px;
+    }
+
+    .tarjetas {
+        gap: 15px;
+    }
+
+    .tarjeta {
+        min-width: auto;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .carpeta {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+}
